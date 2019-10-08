@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"tleibert.yahtzee.model"},{"l":"tleibert.yahtzee.model.dice"},{"l":"tleibert.yahtzee.view"}]

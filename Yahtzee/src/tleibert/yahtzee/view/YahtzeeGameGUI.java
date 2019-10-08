@@ -27,7 +27,7 @@ public class YahtzeeGameGUI extends JFrame implements ActionListener {
     /** Height of GUI Window */
     public static final int HEIGHT = 560;
     /** Path to (directory for) card images */
-    public static final String PATH = "img/DieFace0";
+    public static final String PATH = "/img/DieFace0";
     /** Extension of card images */
     public static final String EXTENSION = ".png";
     /** Time (milliseconds) that cards that are not a match are displayed */
@@ -202,7 +202,7 @@ public class YahtzeeGameGUI extends JFrame implements ActionListener {
                 button.addActionListener(this);
 
                 // dice are initially set to be a blank die face, before they have been rolled
-                button.setIcon (new ImageIcon(PATH + "0" + EXTENSION));
+                button.setIcon (new ImageIcon(getClass().getResource(PATH + "0" + EXTENSION)));
                 button.setEnabled(false);
                 diceButtons[i][j] = button;
                 gridPanel.add(button);
@@ -218,7 +218,7 @@ public class YahtzeeGameGUI extends JFrame implements ActionListener {
             {
                 JButton button = new JButton();
                 button.addActionListener(this);
-                button.setIcon (new ImageIcon(PATH + "blank" + EXTENSION));
+                button.setIcon(null);
                 button.setEnabled(true);
                 controlButtons[i][j] = button;
                 controlPanel.add(button);
@@ -311,7 +311,7 @@ public class YahtzeeGameGUI extends JFrame implements ActionListener {
                 numRolls = 0;
                 int[] diceStates = dice.toIntArray();
                 for (int i = 0; i < diceButtons[0].length; i++) {
-                    diceButtons[0][i].setIcon(new ImageIcon(PATH + diceStates[i] + EXTENSION));
+                    diceButtons[0][i].setIcon(new ImageIcon(getClass().getResource(PATH + diceStates[i] + EXTENSION)));
 
                     // deselect and disable all dice buttons until the first roll of the next
                     selected[i] = false;
@@ -390,7 +390,7 @@ public class YahtzeeGameGUI extends JFrame implements ActionListener {
             // update the dice images
             int[] diceStates = dice.toIntArray();
             for (int i = 0; i < diceButtons[0].length; i++) {
-                diceButtons[0][i].setIcon(new ImageIcon(PATH + diceStates[i] + EXTENSION));
+                diceButtons[0][i].setIcon(new ImageIcon(getClass().getResource(PATH + diceStates[i] + EXTENSION)));
             }
 
         }

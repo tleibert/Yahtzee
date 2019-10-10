@@ -351,6 +351,8 @@ public class YahtzeeGameGUI extends JFrame implements ActionListener {
                     int choice = JOptionPane.showConfirmDialog(null, "Do you want to play again?", "Play again?", 2);
                     if (choice == 0) {
                         new YahtzeeGameGUI();
+                    } else {
+                    	System.exit(0);
                     }
                 }
             }
